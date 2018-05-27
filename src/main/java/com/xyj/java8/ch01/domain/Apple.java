@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Apple {
     private String color;
-    private int weight;
+    private Integer weight;
 
     public static boolean isGreenApple(Apple apple) {
         return "green".equals(apple.getColor());

@@ -14,6 +14,9 @@ import com.xyj.java8.ch01.domain.Transaction;
  */
 public class TransactionTest {
     public static void main(String[] args) {
+        List<Transaction> transactions = new ArrayList<>();
+        groupTransaction(transactions);
+        groupTransaction2(transactions);
 
     }
 

@@ -1,5 +1,7 @@
 package com.xyj.java8.ch01;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -18,6 +20,8 @@ public class AppleTest {
         filterApples(inventory, (Apple a) -> "green".equals(a.getColor()));//Lambda
         filterApples(inventory, (Apple a) -> a.getWeight() > 150);
         filterApples(inventory, (Apple a) -> "brown".equals(a.getColor()) || a.getWeight() > 80);//Lambda的长度过长，应该写成方法，清晰度更重要
+        inventory.stream().filter((Apple apple) -> apple.getWeight() > 150).collect(toList());//stream filter 顺序处理
+        inventory.parallelStream().filter((Apple apple) -> apple.getWeight() > 150).collect(toList());//stream filter 并行处理
     }
 
     /**
